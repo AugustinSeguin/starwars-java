@@ -1,8 +1,5 @@
-package mds.grenoble.m1.starwars.models;
+package mds.grenoble.m1.starwars.core.domain;
 
-import jakarta.persistence.*;
-
-@Entity
 public class Species {
 
 	 public enum Classification {
@@ -13,16 +10,17 @@ public class Species {
 	  AMPHIBIAN
 	 }
 	 
-	 @Id
-	 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	 public long id;
-	 
-	 @Column(unique=true)
+
 	 public String name;
 	 
-	 @Enumerated(EnumType.STRING)
 	 public Classification classification;
 	 
 	 public boolean sentient;
+
+	 public Species(long id)
+	 {
+		 this.id = id;
+	 }
 }
  
